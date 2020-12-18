@@ -5,7 +5,7 @@ class About extends React.Component {
 	render() {
 		return (
 			<BaseLayout>
-				<h1>Hello About</h1>
+				<h1 className="castomClass">Hello About</h1>
 			</BaseLayout>
 		);
 	}
