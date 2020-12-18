@@ -1,11 +1,12 @@
 import React from "react";
+import BaseLayout from "../components/layouts/BaseLayout";
 
 class Cv extends React.Component {
 	render() {
 		return (
-			<div>
-				<h1>Hello Next</h1>
-			</div>
+			<BaseLayout>
+				<h1>Hello Cv</h1>
+			</BaseLayout>
 		);
 	}
 }
