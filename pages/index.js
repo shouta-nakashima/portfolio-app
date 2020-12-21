@@ -3,7 +3,7 @@ import BaseLayout from "../components/layouts/BaseLayout";
 import { Container, Row, Col } from "reactstrap";
 import Typed from "react-typed";
 
-const ROLE = ["React", "Node", "NextJS", "TypeScript"];
+const ROLE = ["React", "Node", "NextJS", "GraphQL", "TypeScript"];
 class index extends React.Component {
 	render() {
 		return (
@@ -36,9 +36,11 @@ class index extends React.Component {
 							<Col md="6" className="hero-welcome-wrapper">
 								<div className="hero-welcome-text">
 									<h1>
-										Welcome to the portfolio website of Filip Jerga. Get
-										informed, collaborate and discover projects I was working on
-										through the years!
+										Nakaji's Roomにようこそ！
+										<br />
+										ここは私のこれまで取り組んできたことや、日々の出来事を記録する場所です。
+										<br />
+										お時間の許す限り、気軽に楽しんでいってください^^
 									</h1>
 								</div>
 								<Typed

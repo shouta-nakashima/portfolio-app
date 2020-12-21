@@ -1,5 +1,6 @@
 @import './index';
 
+@import './components/header';
 
 html, body {
   width: 100%;
@@ -11,4 +12,8 @@ html, body {
   color: white;
   font-weight: bold;
   letter-spacing: 2px;
+}
+
+.absolute {
+  position: absolute;
 }
