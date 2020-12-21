@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import {
-	Collapse,
-	Navbar,
-	NavbarToggler,
-	NavbarBrand,
-	Nav,
-	NavItem,
-} from "reactstrap";
+import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from "reactstrap";
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const toggle = () => setIsOpen(!isOpen);
+
+	const LoginLink = () => (
+		<span className="nav-link port-navbar-link clickable">Login</span>
+	);
+
+	const LogoutLink = () => (
+		<span className="nav-link port-navbar-link clickable">Logout</span>
+	);
+
 	return (
-		<>
+		<span>
 			<Navbar
 				className="port-navbar port-default absolute"
 				color="transparent"
@@ -56,9 +58,17 @@ const Header = () => {
 							</Link>
 						</NavItem>
 					</Nav>
+					<Nav navbar>
+						<NavItem className="port-navbar-item">
+							<LoginLink />
+						</NavItem>
+						<NavItem className="port-navbar-item">
+							<LogoutLink />
+						</NavItem>
+					</Nav>
 				</Collapse>
 			</Navbar>
-		</>
+		</span>
 	);
 };
 

@@ -3,7 +3,7 @@ import BaseLayout from "../components/layouts/BaseLayout";
 import { Container, Row, Col } from "reactstrap";
 import Typed from "react-typed";
 
-const ROLE = ["React", "Node", "NextJS", "GraphQL", "TypeScript"];
+const ROLE = ["React", "NodeJS", "NextJS", "GraphQL", "TypeScript"];
 const index = () => {
 	return (
 		<BaseLayout className="cover">
@@ -19,7 +19,7 @@ const index = () => {
 								<div className={`flipper`}>
 									<div className="back">
 										<div className="hero-section-content">
-											<h2> Shota Nakahima </h2>
+											<h2> Shota Nakashima </h2>
 											<div className="hero-section-content-intro">
 												Full Stack Web Engineer
 												<br />
