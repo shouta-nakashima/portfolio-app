@@ -1,3 +1,28 @@
-.castomClass {
-  color: rebeccapurple;
+@import './index';
+
+@import './components/header';
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.base-page {
+  padding-top:150px ;
+  color: white;
+}
+
+.self-typed {
+  font-size: 17px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.absolute {
+  position: absolute;
 }
