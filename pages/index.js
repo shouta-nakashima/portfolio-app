@@ -1,7 +1,9 @@
 import React from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
 import { Container, Row, Col } from "reactstrap";
+import Typed from "react-typed";
 
+const ROLE = ["React", "Node", "NextJS", "TypeScript"];
 class index extends React.Component {
 	render() {
 		return (
@@ -39,6 +41,16 @@ class index extends React.Component {
 										through the years!
 									</h1>
 								</div>
+								<Typed
+									loop
+									strings={ROLE}
+									typeSpeed={70}
+									backSpeed={70}
+									backDelay={1000}
+									loopCount={0}
+									showCursor
+									className="self-typed"
+									cursorChar="|"></Typed>
 								<div className="hero-welcome-bio">
 									<h1>Let's take a look on my work.</h1>
 								</div>
