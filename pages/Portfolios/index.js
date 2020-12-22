@@ -6,6 +6,7 @@ import BasePage from "../../components/BasePage";
 const Portfolios = () => {
 	const [posts, setPosts] = useState([]);
 	const [error, setError] = useState();
+	const [loading, setLoading] = useState(true);
 
 	const getPosts = async () => {
 		const res = await fetch("/api/v1/posts");
@@ -16,6 +17,8 @@ const Portfolios = () => {
 		} else {
 			setPosts(data);
 		}
+
+		setLoading(false);
 	};
 
 	useEffect(() => {
@@ -37,6 +40,7 @@ const Portfolios = () => {
 				<h1>Hello Portfolios</h1>
 
 				{posts && <ul>{renderPosts(posts)}</ul>}
+				{loading && <p>loading...</p>}
 				{error && (
 					<h4 className="text-danger">
 						{error.message}のため、現在表示できません。
