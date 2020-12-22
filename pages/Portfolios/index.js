@@ -5,11 +5,17 @@ import BasePage from "../../components/BasePage";
 
 const Portfolios = () => {
 	const [posts, setPosts] = useState([]);
+	const [error, setError] = useState();
+
 	const getPosts = async () => {
 		const res = await fetch("/api/v1/posts");
 		const data = await res.json();
-		setPosts(data);
-		console.log(data);
+
+		if (res.status !== 200) {
+			setError(data);
+		} else {
+			setPosts(data);
+		}
 	};
 
 	useEffect(() => {
@@ -29,7 +35,13 @@ const Portfolios = () => {
 		<BaseLayout>
 			<BasePage>
 				<h1>Hello Portfolios</h1>
-				<ul>{renderPosts(posts)}</ul>
+
+				{posts && <ul>{renderPosts(posts)}</ul>}
+				{error && (
+					<h4 className="text-danger">
+						{error.message}のため、現在表示できません。
+					</h4>
+				)}
 			</BasePage>
 		</BaseLayout>
 	);

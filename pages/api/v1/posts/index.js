@@ -9,6 +9,6 @@ export default async (req, res) => {
 		res.status(200).json(posts.slice(0, 10));
 	} catch (e) {
 		console.log(e);
-		res.status(error.status || 400).end("API ERROR!");
+		res.status(e.status || 400).json({ message: "API ERROR" });
 	}
 };
