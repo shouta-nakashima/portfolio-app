@@ -3,9 +3,11 @@ import BaseLayout from "../../components/layouts/BaseLayout";
 import Link from "next/link";
 import BasePage from "../../components/BasePage";
 import { useGetPost } from "../../actions/index";
+import { useGetUser } from "../../actions/user";
 
 const Portfolios = () => {
 	const { data, error, loading } = useGetPost();
+	const { data: dataU, loading: loadingU } = useGetUser();
 
 	const renderPosts = (posts) => {
 		return posts.map((post) => (
@@ -17,7 +19,7 @@ const Portfolios = () => {
 		));
 	};
 	return (
-		<BaseLayout>
+		<BaseLayout user={dataU} loading={loadingU}>
 			<BasePage>
 				<h1>Hello Portfolios</h1>
 
