@@ -1,29 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import BaseLayout from "../../components/layouts/BaseLayout";
 import Link from "next/link";
 import BasePage from "../../components/BasePage";
+import { useGetPost } from "../../actions/index";
 
 const Portfolios = () => {
-	const [posts, setPosts] = useState([]);
-	const [error, setError] = useState();
-	const [loading, setLoading] = useState(true);
-
-	const getPosts = async () => {
-		const res = await fetch("/api/v1/posts");
-		const data = await res.json();
-
-		if (res.status !== 200) {
-			setError(data);
-		} else {
-			setPosts(data);
-		}
-
-		setLoading(false);
-	};
-
-	useEffect(() => {
-		getPosts();
-	}, []);
+	const { data, error, loading } = useGetPost();
 
 	const renderPosts = (posts) => {
 		return posts.map((post) => (
@@ -39,7 +21,7 @@ const Portfolios = () => {
 			<BasePage>
 				<h1>Hello Portfolios</h1>
 
-				{posts && <ul>{renderPosts(posts)}</ul>}
+				{data && <ul>{renderPosts(data)}</ul>}
 				{loading && <p>loading...</p>}
 				{error && (
 					<h4 className="text-danger">
