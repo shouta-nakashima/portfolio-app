@@ -56,6 +56,11 @@ const Header = ({ user, loading }) => {
 								<a className="nav-link port-navbar-link"> Cv </a>
 							</Link>
 						</NavItem>
+						<NavItem className="port-navbar-item">
+							<Link href="https://github.com/shouta-nakashima">
+								<a className="nav-link port-navbar-link"> GitHub </a>
+							</Link>
+						</NavItem>
 						{user && (
 							<>
 								{user.sub === "google-oauth2|100557002425846421535" && (
@@ -68,11 +73,6 @@ const Header = ({ user, loading }) => {
 								{!user.sub && ""}
 							</>
 						)}
-						<NavItem className="port-navbar-item">
-							<Link href="https://github.com/shouta-nakashima">
-								<a className="nav-link port-navbar-link"> GitHub </a>
-							</Link>
-						</NavItem>
 					</Nav>
 					<Nav navbar>
 						{!loading && (
