@@ -13,7 +13,9 @@ const Header = ({ user, loading }) => {
 	);
 
 	const LogoutLink = () => (
-		<span className="nav-link port-navbar-link clickable">Logout</span>
+		<Link href="/api/v1/logout">
+			<a className="nav-link port-navbar-link"> Logout</a>
+		</Link>
 	);
 
 	return (
