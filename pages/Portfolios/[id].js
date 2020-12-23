@@ -1,31 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import BaseLayout from "../../components/layouts/BaseLayout";
-import axios from "axios";
 import BasePage from "../../components/BasePage";
+import { useRouter } from "next/router";
+import { useGetPostById } from "../../actions/index";
 
-const Portfolio = ({ portfolio }) => {
+const Portfolio = () => {
+	const router = useRouter();
+	const { data, error, loading } = useGetPostById(router.query.id);
+
 	return (
 		<BaseLayout>
 			<BasePage>
 				<h1>Hello Portfolio page</h1>
-				<h1>{portfolio.title}</h1>
-				<p>{portfolio.body}</p>
+				{data && (
+					<>
+						<h1>{data.title}</h1>
+						<p>{data.body}</p>
+					</>
+				)}
+				{loading && <p>loading...</p>}
+				{error && (
+					<h4 className="text-danger">
+						{error.message}のため、現在表示できません。
+					</h4>
+				)}
 			</BasePage>
 		</BaseLayout>
 	);
-};
-
-Portfolio.getInitialProps = async ({ query }) => {
-	let post = {};
-	try {
-		const res = await axios.get(
-			`https://jsonplaceholder.typicode.com/posts/${query.id}`
-		);
-		post = res.data;
-	} catch (e) {
-		console.log(e);
-	}
-	return { portfolio: post };
 };
 
 export default Portfolio;
