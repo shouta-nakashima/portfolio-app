@@ -2,38 +2,20 @@ import React, { useState, useEffect } from "react";
 import BaseLayout from "../../components/layouts/BaseLayout";
 import BasePage from "../../components/BasePage";
 import { useRouter } from "next/router";
+import { useGetPostById } from "../../actions/index";
 
 const Portfolio = () => {
 	const router = useRouter();
-	const [post, setPost] = useState();
-	const [error, setError] = useState();
-	const [loading, setLoading] = useState(true);
-
-	const getPost = async () => {
-		const res = await fetch(`/api/v1/posts/${router.query.id}`);
-		const data = await res.json();
-
-		if (res.status !== 200) {
-			setError(data);
-		} else {
-			setPost(data);
-		}
-
-		setLoading(false);
-	};
-
-	useEffect(() => {
-		getPost();
-	}, []);
+	const { data, error, loading } = useGetPostById(router.query.id);
 
 	return (
 		<BaseLayout>
 			<BasePage>
 				<h1>Hello Portfolio page</h1>
-				{post && (
+				{data && (
 					<>
-						<h1>{post.title}</h1>
-						<p>{post.body}</p>
+						<h1>{data.title}</h1>
+						<p>{data.body}</p>
 					</>
 				)}
 				{loading && <p>loading...</p>}
