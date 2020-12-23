@@ -56,6 +56,15 @@ const Header = ({ user, loading }) => {
 								<a className="nav-link port-navbar-link"> Cv </a>
 							</Link>
 						</NavItem>
+						{user && (
+							<>
+								<NavItem className="port-navbar-item">
+									<Link href="/secret">
+										<a className="nav-link port-navbar-link"> Secret </a>
+									</Link>
+								</NavItem>
+							</>
+						)}
 						<NavItem className="port-navbar-item">
 							<Link href="https://github.com/shouta-nakashima">
 								<a className="nav-link port-navbar-link"> GitHub </a>
