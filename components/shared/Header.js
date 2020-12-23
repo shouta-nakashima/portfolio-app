@@ -7,7 +7,9 @@ const Header = () => {
 	const toggle = () => setIsOpen(!isOpen);
 
 	const LoginLink = () => (
-		<span className="nav-link port-navbar-link clickable">Login</span>
+		<Link href="/api/v1/login">
+			<a className="nav-link port-navbar-link"> Login</a>
+		</Link>
 	);
 
 	const LogoutLink = () => (
