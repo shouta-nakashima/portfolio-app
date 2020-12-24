@@ -21,13 +21,10 @@ const Header = ({ user, loading }) => {
 	return (
 		<span>
 			<Navbar
-				className="port-navbar port-default absolute"
+				className="port-navbar port-default absolute mt-5"
 				color="transparent"
 				dark
 				expand="md">
-				<Link href="/">
-					<a className="port-navbar-brand">Nakaji's Room</a>
-				</Link>
 				<NavbarToggler onClick={toggle} />
 				<Collapse isOpen={isOpen} navbar>
 					<Nav className="mr-auto" navbar>

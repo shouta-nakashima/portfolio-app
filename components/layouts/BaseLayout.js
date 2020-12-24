@@ -7,7 +7,12 @@ const BaseLayout = (props) => {
 		<div className="layout-container">
 			<Header user={user} loading={loading} />
 			<main className={`cover ${className}`}>
-				<div className="wrapper">{children}</div>
+				<div className="wrapper">
+					<h1 style={{ color: "white" }} className="text-center mt-2">
+						Nakaji's Room
+					</h1>
+					{children}
+				</div>
 			</main>
 		</div>
 	);
