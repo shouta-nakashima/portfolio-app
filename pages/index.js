@@ -2,11 +2,13 @@ import React from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
 import { Container, Row, Col } from "reactstrap";
 import Typed from "react-typed";
+import { useGetUser } from "../actions/user";
 
 const ROLE = ["React", "NodeJS", "NextJS", "GraphQL", "TypeScript"];
 const index = () => {
+	const { data, loading } = useGetUser();
 	return (
-		<BaseLayout className="cover">
+		<BaseLayout user={data} loading={loading} className="cover">
 			<div className="main-section">
 				<div className="background-image">
 					<img src="/images/background-index.png" />
@@ -47,7 +49,8 @@ const index = () => {
 						<Col md="6" className="hero-welcome-wrapper">
 							<div className="hero-welcome-text">
 								<h1>
-									Nakaji's Roomにようこそ！
+									{data && `ようこそ ${data.name}さん^^`}
+									{!data && "来て頂きありがとうございます！"}
 									<br />
 									<br />
 									ここは私のこれまで取り組んできたことや学習してきた事、日々の出来事を記録する場所です。
