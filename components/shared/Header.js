@@ -68,6 +68,16 @@ const Header = ({ user, loading }) => {
 								<a className="nav-link port-navbar-link"> SecretSSR </a>
 							</Link>
 						</NavItem>
+						<NavItem className="port-navbar-item">
+							<Link href="/admin">
+								<a className="nav-link port-navbar-link"> Admin </a>
+							</Link>
+						</NavItem>
+						<NavItem className="port-navbar-item">
+							<Link href="/adminssr">
+								<a className="nav-link port-navbar-link"> AdminSSR </a>
+							</Link>
+						</NavItem>
 					</Nav>
 					<Nav navbar>
 						{!loading && (

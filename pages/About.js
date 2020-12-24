@@ -5,6 +5,7 @@ import { useGetUser } from "../actions/user";
 
 const About = () => {
 	const { data, loading } = useGetUser();
+	console.log(data);
 	return (
 		<BaseLayout user={data} loading={loading}>
 			<BasePage>
