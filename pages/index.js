@@ -49,7 +49,8 @@ const index = () => {
 						<Col md="6" className="hero-welcome-wrapper">
 							<div className="hero-welcome-text">
 								<h1>
-									Nakaji's Roomにようこそ！
+									{data && `ようこそ ${data.name}さん^^`}
+									{!data && "来て頂きありがとうございます！"}
 									<br />
 									<br />
 									ここは私のこれまで取り組んできたことや学習してきた事、日々の出来事を記録する場所です。

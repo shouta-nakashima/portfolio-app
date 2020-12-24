@@ -58,18 +58,16 @@ const Header = ({ user, loading }) => {
 								<a className="nav-link port-navbar-link"> GitHub </a>
 							</Link>
 						</NavItem>
-						{user && (
-							<>
-								{user.sub === "google-oauth2|100557002425846421535" && (
-									<NavItem className="port-navbar-item">
-										<Link href="/secret">
-											<a className="nav-link port-navbar-link"> Secret </a>
-										</Link>
-									</NavItem>
-								)}
-								{!user.sub && ""}
-							</>
-						)}
+						<NavItem className="port-navbar-item">
+							<Link href="/secret">
+								<a className="nav-link port-navbar-link"> Secret </a>
+							</Link>
+						</NavItem>
+						<NavItem className="port-navbar-item">
+							<Link href="/secretSsr">
+								<a className="nav-link port-navbar-link"> SecretSSR </a>
+							</Link>
+						</NavItem>
 					</Nav>
 					<Nav navbar>
 						{!loading && (
